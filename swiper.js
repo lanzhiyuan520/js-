@@ -94,7 +94,7 @@ Swiper.prototype.next_img = function(){
     var slider_item = document.querySelectorAll('.slider-item')
     var offset_left
     this.index++
-    if (this.index == 6){
+    if (this.index == this.img.length-1){
         this.index = 0
         offset_left = this.index*this.lis_w
         this.list.style.transition = 'all 0s'
@@ -114,11 +114,11 @@ Swiper.prototype.prev_img = function(){
     var slider_item = document.querySelectorAll('.slider-item')
     this.index--
     if (this.index == 0){
-        this.index = 6
+        this.index = this.imgs.length -1
         offset_right = this.index*this.lis_w
         this.list.style.transition = 'all 0s'
         this.list.style.transform = 'translateX('+ -offset_right +'px'+')'
-        this.index = 5
+        this.index = this.imgs.length -2
     }
     setTimeout(function(){
         offset_right = _this.index*_this.lis_w
